@@ -13,13 +13,13 @@ export async function fetchTrendMovies() {
     return response.data;
 }
 
-export async function fetchFilterMovies() {
-    const response = await axios.get('/search/movie?query=1&include_adult=false&language=en-US&page=1', options); 
-    return response.data;
-}
+// export async function fetchFilterMovies() {
+//     const response = await axios.get('/search/movie?query=1&include_adult=false&language=en-US&page=1', options); 
+//     return response.data;
+// }
 
-export async function fetchMovieDetails() {
-    const response = await axios.get('/trending/movie/day?language=en-US', options)
+export async function fetchMovieDetails(movieId) {
+    const response = await axios.get(`/trending/movie/${movieId}`, options)
     return response.data;
 }
 
