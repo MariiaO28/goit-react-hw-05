@@ -1,5 +1,4 @@
-import { lazy } from 'react'
-const MovieDetailsPage = lazy(() => import('../../pages/MoviesPage/MoviesPage'))
+import MovieCard from '../MovieCard/MovieCard'
 import css from './MovieList.module.css'
 
 export default function MovieList({ movies }) {
@@ -7,7 +6,7 @@ export default function MovieList({ movies }) {
         <ul className={css.list}>
             {movies.map((movie) => (
                 <li key={movie.id}>
-                    <MovieDetailsPage movie={movie} />
+                    <MovieCard movie={movie} />
                 </li>
             )) }
         </ul>
