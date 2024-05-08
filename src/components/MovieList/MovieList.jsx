@@ -8,7 +8,7 @@ export default function MovieList({ movies }) {
                 <li key={movie.id}>
                     <MovieCard movie={movie} />
                 </li>
-            )) }
+            ))}
         </ul>
     )
 }

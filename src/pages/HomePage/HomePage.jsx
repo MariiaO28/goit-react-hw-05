@@ -13,26 +13,25 @@ export default function HomePage() {
     useEffect(() => {
         async function getTrendMovies() {
             try {
-                setIsLoading (true)
-                const data = await fetchTrendMovies()
-                setMovies (data)
+                setIsLoading(true)
+                const data = await fetchTrendMovies();
+                setMovies(data.results)
             } catch (error) {
                 setError(true)
             }
             finally {
-                setIsLoading (false)
+                setIsLoading(false)
             }
         }
-        getTrendMovies()
-    }, [])
-    
+        getTrendMovies();
+    }, []);
 
     return (
         <div className={css.container}>
-            <h2>Tranding Today</h2>
+            <h2 className={css.header}>Tranding Today</h2>
             {isLoading && <Loader />}
             {error && <ErrorMessage />}
-            {movies.length > 0 && <MovieList movies={movies} />}
+            {movies.length>0 && <MovieList movies={movies} />}
         </div>
     )
 }

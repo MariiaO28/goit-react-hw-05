@@ -9,20 +9,23 @@ const options = {
 };
 
 export async function fetchTrendMovies() {
-    const response = await axios.get('/trending/movie/day?language=en-US', options)
-    return response.data;
+  const response = await axios.get('/trending/movie/day?language=en-US', options)
+  return response.data;
 }
-
-// export async function fetchFilterMovies() {
-//     const response = await axios.get('/search/movie?query=1&include_adult=false&language=en-US&page=1', options); 
-//     return response.data;
-// }
 
 export async function fetchMovieDetails(movieId) {
-    const response = await axios.get(`/trending/movie/${movieId}`, options)
+    const response = await axios.get(`/movie/${movieId}?language=en-US`, options)
     return response.data;
 }
 
+export async function fetchMovieCast(movieId) {
+  const response = await axios.get(`movie/${movieId}/credits`, options)
+  return response.data;
+}
 
+export async function fetchMoviesReviews(movieId) {
+  const response = await axios.get(`movie/${movieId}/reviews`, options)
+  return response.data;
+}
 
  

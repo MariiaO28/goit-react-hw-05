@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    color :black;
+}
+
+.card:hover {
+    color:blue;
+}
+
+img {
+    display: block;
+}
