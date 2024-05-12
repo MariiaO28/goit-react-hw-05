@@ -1,0 +1,31 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 15px 0 0 0;
+    padding: 0;
+    gap: 15px;
+    list-style: none;
+}
+
+.card {
+    padding: 10px;
+}
+
+.picture {
+    display: block;
+    width: 120px;
+    height: 160px;
+}
+
+.text {
+    font-size: 14px;
+    text-align: start;
+    margin: 10px 0 0 0;
+}
+
+.noinfo {
+    font-size: 18px;
+    margin: 15px 0 0 0;
+    text-align: start;
+}

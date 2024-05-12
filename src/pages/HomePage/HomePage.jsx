@@ -28,7 +28,7 @@ export default function HomePage() {
 
     return (
         <div className={css.container}>
-            <h2 className={css.header}>Tranding Today</h2>
+            <h2 className={css.header}>Trending Today</h2>
             {isLoading && <Loader />}
             {error && <ErrorMessage />}
             {movies.length>0 && <MovieList movies={movies} />}

@@ -1,18 +1,25 @@
-import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useParams, NavLink, Outlet, useLocation} from 'react-router-dom'
+import { useEffect, useState, Suspense, useRef} from 'react'
 import { fetchMovieDetails } from '../../../movies-api'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import Loader from '../../components/Loader/Loader'
 import MovieInfo from '../../components/MovieInfo/MovieInfo'
-import MovieCast from '../../components/MovieCast/MovieCast'
-import MovieReviews from '../../components/MovieReviews/MovieReviews'
+import BackLink from '../../components/BackLink/BackLink'
+import clsx from 'clsx'
 import css from './MovieDetailsPage.module.css'
 
+const activeClass = ({ isActive }) => {
+    return clsx(css.link, isActive && css.active)
+}
+
 export default function MovieDetailsPage() {
-    const { movieId } = useParams();
+    const { movieId } = useParams()
     const [movie, setMovie] = useState(null)
     const [isLoading, setIsLoading] =useState(false)
     const [error, setError] = useState(false)
+    
+    const location = useLocation()
+    const backLinkURL = useRef(location.state ?? "/movies")
 
     useEffect(() => {
         async function getMovieById() {
@@ -31,16 +38,27 @@ export default function MovieDetailsPage() {
     },[movieId])
 
     return (
-        <div className={css.container}>
+        <div>
             {error && <ErrorMessage />}
             {isLoading && <Loader />}
-            <Link to='/movies'>Go back</Link>
+
+            <BackLink to={backLinkURL.current}>Go back</BackLink>
+           
             {movie && <MovieInfo movie={movie} />}
-            <b>Additional Information</b>
+        
+            <h3 className={css.header}>Additional Information</h3>
             <ul className={css.list}>
-                <li className={css.link}><MovieCast /></li>
-                <li className={css.link}><MovieReviews /></li>
+                <li>
+                    <NavLink to='cast' className={activeClass}>Cast</NavLink>
+                </li>
+                <li>
+                    <NavLink to='reviews' className={activeClass}>Reviews</NavLink>
+                </li>
             </ul>
+
+            <Suspense fallback={<Loader />}>
+                <Outlet/>
+            </Suspense>
         </div>
     )
 }

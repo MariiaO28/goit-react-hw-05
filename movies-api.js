@@ -9,12 +9,12 @@ const options = {
 };
 
 export async function fetchTrendMovies() {
-  const response = await axios.get('/trending/movie/day?language=en-US', options)
+  const response = await axios.get('/trending/movie/day', options)
   return response.data;
 }
 
 export async function fetchMovieDetails(movieId) {
-    const response = await axios.get(`/movie/${movieId}?language=en-US`, options)
+    const response = await axios.get(`/movie/${movieId}`, options)
     return response.data;
 }
 
@@ -28,4 +28,7 @@ export async function fetchMoviesReviews(movieId) {
   return response.data;
 }
 
- 
+export async function fetchMovieBySearch(query) {
+  const response = await axios.get(`/search/movie?query=${query}`, options)
+  return response.data;
+ }

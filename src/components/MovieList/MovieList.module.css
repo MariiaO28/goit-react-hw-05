@@ -1,10 +1,23 @@
 .list {
     display: flex;
     flex-wrap: wrap;
+    margin: 15px auto 0 auto;
     gap: 20px;
     list-style: none;
     text-align: start;
-    margin: 0;
     padding: 0;
 }
+
+.link {
+    margin-top: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color :black;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover {
+    color:blue;
+}
+
 

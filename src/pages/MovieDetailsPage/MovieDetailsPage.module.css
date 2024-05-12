@@ -1,0 +1,63 @@
+.header {
+    margin: 0;
+    text-align: start;
+}
+
+.header::before {
+    display: flex;
+    margin: 15px 0;
+    content: "";
+    width: 1280px;
+    height: 2px;
+    background-color: lightgray;
+}
+
+.list {
+    display: flex;
+    width: 80px;
+    flex-direction: column;
+    list-style: none;
+    align-items: start;
+    gap: 5px;
+    padding: 0;
+    margin: 15px 0 0 0;
+    text-align: start;
+}
+
+.container::after {
+    display: flex;
+    margin-top: 15px;
+    content: "";
+    width: 1280px;
+    height: 2px;
+    background-color: lightgray;
+}
+
+.list::after {
+    display: block;
+    margin-top: 15px;
+    content: "";
+    width: 1280px;
+    height: 2px;
+    background-color: lightgray;
+}
+
+.link {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active {
+    color: blue;
+}
+
+.active::after {
+    display: flex;
+    content: "";
+    width: auto;
+    height: 2px;
+    background-color: blue;
+}
+

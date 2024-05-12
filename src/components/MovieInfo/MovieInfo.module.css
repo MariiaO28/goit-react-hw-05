@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.picture {
+    display: block;
+    margin-top: 15px;
+}
+
+.data {
+    display: flex;
+    margin-left: 15px;
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    margin: 15px 0 0 0;
+}
+
+.text{
+    margin: 0;
+    text-align: start;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.genre {
+    font-size: 18px;
+}

@@ -2,24 +2,23 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 300px;
-    margin-bottom: 10px;
-    text-align: center;
+    width: 239px;
+    height: 400px;
+    box-shadow: 2px 3px 3px lightgrey;
 }
 
-.card {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    color :black;
-}
-
-.card:hover {
-    color:blue;
-}
-
-img {
+.picture {
     display: block;
+    width: 100%;
+    height: 350px;
+    margin: 0;
+    border: 1px solid lightgrey;
+    border-bottom: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px 0 0 0;
 }
