@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 239px;
+    width: 238px;
     height: 400px;
     box-shadow: 2px 3px 3px lightgrey;
 }
@@ -19,6 +19,6 @@
 .title {
     text-align: center;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     margin: 10px 0 0 0;
 }
