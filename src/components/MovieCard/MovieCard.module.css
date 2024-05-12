@@ -16,7 +16,7 @@
     border: 1px solid lightgrey;
 }
 
-h3 {
+.title {
     display: flex;
     padding: 5px;
     margin: auto 0;
